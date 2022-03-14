@@ -5,4 +5,12 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
+    background: #1F293A;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 920px;
+    margin: 0 auto;
 }
