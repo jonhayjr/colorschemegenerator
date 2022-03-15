@@ -9,21 +9,22 @@ const handleSubmit = (e) => {
     //Get Form Data
     const formData = new FormData(e.target);
     const color = formData.get('color');
-    const colorScheme = formData.get('color-scheme');
+    const colorSchemeMode = formData.get('color-scheme-mode');
 
-    if (color && colorScheme) {
-        getColorScheme(color, colorScheme);
+    //If form has color and color scheme mode, get color scheme.
+    if (color && colorSchemeMode) {
+        getColorScheme(color, colorSchemeMode);
     }
 
 
 }
 
 //Function that gets color scheme from API
-const getColorScheme = (color, colorScheme) => {
+const getColorScheme = (color, colorSchemeMode) => {
     const baseURL = 'https://www.thecolorapi.com/scheme';
     const hexColorClean = color.replaceAll('#', ''); //Remove hash tag from color value
     
-    fetch(`${baseURL}?hex=${hexColorClean}&mode=${colorScheme}&count=5`)
+    fetch(`${baseURL}?hex=${hexColorClean}&mode=${colorSchemeMode}&count=5`)
         .then(res => res.json())
         .then(data => {
             renderColorScheme(data.colors);
