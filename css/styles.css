@@ -18,13 +18,13 @@ body {
 
 input, 
 select {
+    display: block;
     background: #1F293A;
     color: white;
     outline: 0;
 }
 
 input {
-    display: block;
     padding: 0;
     border: none;
 }
@@ -62,7 +62,7 @@ input[type="color"]:focus
     background: #1F293A;
 }
 
-.color-selection-bar {
+.color-selection-form {
    max-width: 475px;
    margin: 0 auto;
    width: 100%;
@@ -126,7 +126,7 @@ input[type="color"]:focus
 /*Media Queries*/
 
 @media screen and (min-width: 720px) {
-    .color-selection-bar {
+    .color-selection-form {
         flex-direction: row;
         padding: 1em;
         max-width: 550px;
